@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ProjectGuid>{DE0EED45-ECF1-46F1-9947-50E86D734945}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CBM</RootNamespace>
+    <AssemblyName>CBM</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\Downloads\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.100.3.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.100.3\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FlatButton">
+      <HintPath>..\..\Downloads\JControls\FlatButton.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.6.3.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="JMetroTextBox">
+      <HintPath>..\..\Downloads\JControls\JMetroTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox">
+      <HintPath>..\..\Downloads\JTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox2">
+      <HintPath>..\..\Downloads\JControls\JTextBox2.dll</HintPath>
+    </Reference>
+    <Reference Include="JThinButton">
+      <HintPath>..\..\Downloads\JControls\JThinButton.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>packages\SixLabors.Fonts.1.0.0-beta19\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.UnmanagedMemoryStream.4.3.0\lib\net46\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant.cs" />
+    <Compile Include="Customs\CBMButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customs\CBMComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customs\CBMDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customs\CBMPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customs\CBMTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customs\CBMTextbox.Designer.cs">
+      <DependentUpon>CBMTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\CBMCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\CoeCategory.cs" />
+    <Compile Include="Models\Dealership.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FuelType.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\ResetPassword.cs" />
+    <Compile Include="Models\Signup.cs" />
+    <Compile Include="Models\SubscriptionPlan.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Variant.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleModel.cs" />
+    <Compile Include="Models\VehicleSalesAgreement.cs" />
+    <Compile Include="Models\VehicleType.cs" />
+    <Compile Include="Presenters\MarketplaceDealershipPresenter.cs" />
+    <Compile Include="Presenters\MarketplaceHomePresenter.cs" />
+    <Compile Include="Presenters\MemberPresenter.cs" />
+    <Compile Include="Presenters\HomePresenter.cs" />
+    <Compile Include="Presenters\FuelTypePresenter.cs" />
+    <Compile Include="Presenters\CoeCategoryPresenter.cs" />
+    <Compile Include="Presenters\MarketplaceSignupPresenter.cs" />
+    <Compile Include="Presenters\MarketplaceLoginPresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\MarketplaceVehiclePresenter.cs" />
+    <Compile Include="Presenters\DealershipPresenter.cs" />
+    <Compile Include="Presenters\VehiclePresenter.cs" />
+    <Compile Include="Presenters\VehicleModelPresenter.cs" />
+    <Compile Include="Presenters\VariantPresenter.cs" />
+    <Compile Include="Presenters\VehicleTypePresenter.cs" />
+    <Compile Include="Presenters\BrandPresenter.cs" />
+    <Compile Include="Presenters\SubscriptionPlanPresenter.cs" />
+    <Compile Include="Presenters\GroupPresenter.cs" />
+    <Compile Include="Presenters\AdministratorPresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DealershipService.cs" />
+    <Compile Include="Services\MemberService.cs" />
+    <Compile Include="Services\VariantService.cs" />
+    <Compile Include="Services\VehicleService.cs" />
+    <Compile Include="Services\VehicleModelService.cs" />
+    <Compile Include="Services\VehicleSalesAgreementService.cs" />
+    <Compile Include="Services\VehicleTypeService.cs" />
+    <Compile Include="Services\FuelTypeService.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\CoeCategoryService.cs" />
+    <Compile Include="Services\BrandService.cs" />
+    <Compile Include="Services\SubscriptionPlanService.cs" />
+    <Compile Include="Services\GroupService.cs" />
+    <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Utilities\ConnectionFactory.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Utilities\EntityValidator.cs" />
+    <Compile Include="Utilities\EventHandlerUtils.cs" />
+    <Compile Include="Utilities\HelperUtils.cs" />
+    <Compile Include="Utilities\ModelValidation.cs" />
+    <Compile Include="Utilities\TimeUtils.cs" />
+    <Compile Include="Utilities\UserControlUtils.cs" />
+    <Compile Include="Views\BuyerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BuyerForm.Designer.cs">
+      <DependentUpon>BuyerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketplaceDealershipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MarketplaceDealershipForm.Designer.cs">
+      <DependentUpon>MarketplaceDealershipForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReportView.Designer.cs">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SellerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SellerForm.Designer.cs">
+      <DependentUpon>SellerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketplaceHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MarketplaceHomeForm.Designer.cs">
+      <DependentUpon>MarketplaceHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketplaceCommonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MarketplaceCommonView.Designer.cs">
+      <DependentUpon>MarketplaceCommonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MemberForm.Designer.cs">
+      <DependentUpon>MemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EntryView.Designer.cs">
+      <DependentUpon>EntryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketplaceSignupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MarketplaceSignupView.Designer.cs">
+      <DependentUpon>MarketplaceSignupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketplaceLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MarketplaceLoginView.Designer.cs">
+      <DependentUpon>MarketplaceLoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuelTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuelTypeForm.Designer.cs">
+      <DependentUpon>FuelTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoeCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CoeCategoryForm.Designer.cs">
+      <DependentUpon>CoeCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketplaceVehicleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MarketplaceVehicleForm.Designer.cs">
+      <DependentUpon>MarketplaceVehicleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DealershipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DealershipForm.Designer.cs">
+      <DependentUpon>DealershipForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleForm.Designer.cs">
+      <DependentUpon>VehicleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleModelForm.Designer.cs">
+      <DependentUpon>VehicleModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VariantForm.Designer.cs">
+      <DependentUpon>VariantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleTypeForm.Designer.cs">
+      <DependentUpon>VehicleTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BrandForm.Designer.cs">
+      <DependentUpon>BrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubscriptionPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubscriptionPlanForm.Designer.cs">
+      <DependentUpon>SubscriptionPlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdministratorForm.Designer.cs">
+      <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CommonView.Designer.cs">
+      <DependentUpon>CommonView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Customs\CBMTextbox.resx">
+      <DependentUpon>CBMTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\BuyerForm.resx">
+      <DependentUpon>BuyerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CommonView.vi-VN.resx">
+      <DependentUpon>CommonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceCommonView.vi-VN.resx">
+      <DependentUpon>MarketplaceCommonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceDealershipForm.resx">
+      <DependentUpon>MarketplaceDealershipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReportView.resx">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SellerForm.resx">
+      <DependentUpon>SellerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceHomeForm.resx">
+      <DependentUpon>MarketplaceHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceCommonView.resx">
+      <DependentUpon>MarketplaceCommonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MemberForm.resx">
+      <DependentUpon>MemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EntryView.resx">
+      <DependentUpon>EntryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceSignupView.resx">
+      <DependentUpon>MarketplaceSignupView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceLoginView.resx">
+      <DependentUpon>MarketplaceLoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuelTypeForm.resx">
+      <DependentUpon>FuelTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CoeCategoryForm.resx">
+      <DependentUpon>CoeCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MarketplaceVehicleForm.resx">
+      <DependentUpon>MarketplaceVehicleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DealershipForm.resx">
+      <DependentUpon>DealershipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SettingForm.fr.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleForm.resx">
+      <DependentUpon>VehicleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleModelForm.resx">
+      <DependentUpon>VehicleModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VariantForm.resx">
+      <DependentUpon>VariantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleTypeForm.resx">
+      <DependentUpon>VehicleTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BrandForm.resx">
+      <DependentUpon>BrandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubscriptionPlanForm.resx">
+      <DependentUpon>SubscriptionPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdministratorForm.resx">
+      <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CommonView.resx">
+      <DependentUpon>CommonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\cbm_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\white-carbuyer-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\gr-logo.jpg" />
+    <None Include="Resources\calendar-icon.png" />
+    <None Include="Assets\marketplace_background.PNG" />
+    <None Include="Assets\background_login.png" />
+    <None Include="Assets\cbm_admin_portal_logo.PNG" />
+    <None Include="Assets\buy-icon.png" />
+    <None Include="Assets\calendar-icon.png" />
+    <Content Include="Assets\error.ico" />
+    <None Include="Resources\trash-icon-14-48.ico" />
+    <None Include="Resources\edit.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
