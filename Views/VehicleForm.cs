@@ -170,42 +170,53 @@ namespace CBM.Views {
 
     private void ExportData(object sender, EventArgs e) {
       using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx"}) {
-        if (saveFileDialog.ShowDialog() == DialogResult.OK) {
-          using (XLWorkbook workbook = new XLWorkbook()) {
-            DataTable dt = new DataTable();
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (XLWorkbook workbook = new XLWorkbook())
+                    {
+                        DataTable dt = new DataTable();
 
-            // Add columns to the DataTable based on the columns in the DataGridView
-            int index = -1;
-            foreach (DataGridViewColumn column in dataGridView.Columns) {
-              ++index;
-              if (index < 2 || index > 8) {
-                continue;
-              }
-              Console.WriteLine(index);
-              dt.Columns.Add(column.HeaderText, typeof(String));
-            }
+                        // Add columns to the DataTable based on the columns in the DataGridView
+                        int index = -1;
+                        foreach (DataGridViewColumn column in dataGridView.Columns)
+                        {
+                            ++index;
+                            if (index < 2 || index > 8)
+                            {
+                                continue;
+                            }
+                            Console.WriteLine(index);
+                            dt.Columns.Add(column.HeaderText, typeof(String));
+                        }
 
-            // Add rows to the DataTable based on the rows in the DataGridView
-            
-            foreach (DataGridViewRow row in dataGridView.Rows) {
-              // Create a new row in the DataTable
-              dt.Rows.Add();
-              index = -1;
-              // Set the value of each cell in the DataTable to the value of the corresponding cell in the DataGridView
-              foreach (DataGridViewCell cell in row.Cells) {
-                ++index;
-                if (index < 2 || index > 8) {
-                  continue;
+                        // Add rows to the DataTable based on the rows in the DataGridView
+
+                        foreach (DataGridViewRow row in dataGridView.Rows)
+                        {
+                            // Create a new row in the DataTable
+                            dt.Rows.Add();
+                            index = -1;
+                            // Set the value of each cell in the DataTable to the value of the corresponding cell in the DataGridView
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                ++index;
+                                if (index < 2 || index > 8)
+                                {
+                                    continue;
+                                }
+                                Console.WriteLine(index);
+                                if (cell == null || cell.Value == null)
+                                {
+                                    continue;
+                                }
+                                dt.Rows[dt.Rows.Count - 1][index - 2] = cell.Value.ToString();
+                            }
+                        }
+                        workbook.Worksheets.Add(dt, "Vehicles");
+                        workbook.SaveAs(saveFileDialog.FileName);
+                        MessageBox.Show("Exported data successfully");
+                    }
                 }
-                Console.WriteLine(index);
-                dt.Rows[dt.Rows.Count - 1][index-2] = cell.Value.ToString();
-              }
-            }
-            workbook.Worksheets.Add(dt, "Vehicles");
-            workbook.SaveAs(saveFileDialog.FileName);
-            MessageBox.Show("Exported data successfully");
-          }
-        }
       }
     }
 

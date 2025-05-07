@@ -13,8 +13,9 @@ namespace CBM.Utilities {
     }
 
     public static string GetCurrentFormattedTime() {
-      return DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
-    }
+      return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            //return DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
+        }
 
   }
 }

@@ -20,7 +20,8 @@ namespace CBM.Services {
         command.CommandText = sqlQuery;
         HelperUtils.MapModelToInsertCommand(model, command);
         command.Parameters.AddWithValue("@id", model.id);
-        command.Parameters.AddWithValue("@created_time", TimeUtils.GetCurrentFormattedTime());
+                Console.WriteLine(TimeUtils.GetCurrentFormattedTime());
+                command.Parameters.AddWithValue("@created_time", TimeUtils.GetCurrentFormattedTime());
         Console.WriteLine($"Insert query: {command.CommandText}");
         try {
           int result = command.ExecuteNonQuery();
